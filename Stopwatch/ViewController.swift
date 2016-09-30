@@ -38,14 +38,14 @@ class ViewController: UIViewController, StopwatchDelegate, UITableViewDataSource
         
         startBtn.setTitleColor(UIColor.white, for: .normal)
         startBtn.backgroundColor = greenColor
-        startBtn.layer.cornerRadius = 5
-        startBtn.layer.borderWidth = 5
+        startBtn.layer.cornerRadius = 30
+        startBtn.layer.borderWidth = 1
         startBtn.layer.borderColor = UIColor.white.cgColor
         
         lapBtn.setTitleColor(UIColor.white, for: .normal)
         lapBtn.backgroundColor = blueColor
-        lapBtn.layer.cornerRadius = 5
-        lapBtn.layer.borderWidth = 5
+        lapBtn.layer.cornerRadius = 30
+        lapBtn.layer.borderWidth = 1
         lapBtn.layer.borderColor = UIColor.white.cgColor
     }
     
