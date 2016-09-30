@@ -58,7 +58,6 @@ class Stopwatch {
     ///
     init(delegate: StopwatchDelegate) {
         self.delegate = delegate
-        laps.append("")
     }
     
     // *****************************************************************
@@ -67,8 +66,12 @@ class Stopwatch {
     
     /// Start the stopwatch's timer.
     func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerHasTicked(timer:)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self,
+                                     selector: #selector(timerHasTicked(timer:)),
+                                     userInfo: nil, repeats: true)
         RunLoop.current.add(timer!, forMode: RunLoopMode.commonModes)
+        
+        laps.append("")
         
         /// Record the time at which we started this timer.
         timerStartTime = Date.timeIntervalSinceReferenceDate
@@ -95,7 +98,6 @@ class Stopwatch {
         lapSavedTime = 0
         lapStartTime = nil
         laps.removeAll()
-        laps.append("")
         delegate?.timerWasReset()
     }
     
