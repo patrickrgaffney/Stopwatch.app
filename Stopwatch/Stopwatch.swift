@@ -71,7 +71,11 @@ class Stopwatch {
                                      userInfo: nil, repeats: true)
         RunLoop.current.add(timer!, forMode: RunLoopMode.commonModes)
         
-        laps.append("")
+        /// If this is the first lap, add it to the screen. Otherwise this
+        /// is done by the completeLap() function.
+        if laps.count == 0 {
+            laps.append("")
+        }
         
         /// Record the time at which we started this timer.
         timerStartTime = Date.timeIntervalSinceReferenceDate
